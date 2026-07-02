@@ -34,6 +34,11 @@ app.use(morgan('dev'));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+
+
+app.get("/", (req, res) => {
+  res.send("C-Commerce Backend is Running 🚀");
+});
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 200,
